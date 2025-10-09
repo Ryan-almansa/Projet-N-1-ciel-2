@@ -9,7 +9,6 @@ const PORT = 3001;
 app.use(cors());
 app.use(bodyParser.json());
 
-// In-memory user store (for demo only)
 const users = [];
 let sessions = {};
 
