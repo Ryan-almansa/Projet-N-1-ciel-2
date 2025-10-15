@@ -1,0 +1,160 @@
+/* ====== GLOBAL ====== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+  --primary: #8E2DE2;
+  --secondary: #4A00E0;
+  --white: #ffffff;
+  --glass: rgba(255, 255, 255, 0.15);
+  --border: rgba(255, 255, 255, 0.25);
+  --glow: 0 0 25px rgba(142, 45, 226, 0.6);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(270deg, var(--primary), var(--secondary));
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+}
+
+/* Animation du fond dégradé */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ====== CONTAINER ====== */
+.login-container {
+  width: 350px;
+  padding: 40px 30px;
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(15px);
+  text-align: center;
+  transition: all 0.4s ease;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.login-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.2), var(--glow);
+}
+
+/* Animation d’apparition */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ====== TITRE ====== */
+.login-container h2 {
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 26px;
+  color: var(--white);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+/* ====== INPUTS ====== */
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--white);
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+input:focus {
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: var(--glow);
+}
+
+/* ====== BUTTON ====== */
+button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, var(--secondary), var(--primary));
+  border: none;
+  border-radius: 8px;
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(142, 45, 226, 0.3);
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(142, 45, 226, 0.6);
+}
+
+/* ====== TEXTES ====== */
+p {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+#error, #message {
+  margin-top: 10px;
+  color: #ff4b5c;
+  font-weight: 600;
+}
+
+a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #ffe259;
+}
+
+/* ====== PAGE ACCUEIL ====== */
+body.home {
+  flex-direction: column;
+  text-align: center;
+  gap: 15px;
+}
+
+.home h1 {
+  font-size: 36px;
+  text-shadow: var(--glow);
+  animation: pulse 2s infinite alternate;
+}
+
+@keyframes pulse {
+  from { text-shadow: 0 0 10px rgba(142, 45, 226, 0.7); }
+  to { text-shadow: 0 0 25px rgba(142, 45, 226, 1); }
+}
+
+.home p {
+  font-size: 18px;
+  opacity: 0.85;
+}
